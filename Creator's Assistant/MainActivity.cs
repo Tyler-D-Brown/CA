@@ -13,6 +13,8 @@ namespace Creator_s_Assistant
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            
+
         }
     }
 }
