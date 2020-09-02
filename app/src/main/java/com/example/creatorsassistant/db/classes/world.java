@@ -4,7 +4,7 @@ package com.example.creatorsassistant.db.classes;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "event")
+@Entity(tableName = "world")
 public class world {
     @PrimaryKey(autoGenerate = true)
     private int id;

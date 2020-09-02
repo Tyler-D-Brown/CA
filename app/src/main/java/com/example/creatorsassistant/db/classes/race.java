@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 import com.example.creatorsassistant.db.helpers.sqLiteSudoArray;
 
-@Entity(tableName = "nation", foreignKeys = {
+@Entity(tableName = "race", foreignKeys = {
         @ForeignKey(entity = world.class, parentColumns = "id", childColumns = "world")
 })
 public class race {
