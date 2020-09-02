@@ -1,4 +1,0 @@
-Creator_s_Assistant.MainActivity, Creator's Assistant;md5f1213d9de745f02d9507fa172850ab3c.MainActivity
-Creator_s_Assistant.MainActivity, Creator's Assistant, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5f1213d9de745f02d9507fa172850ab3c.MainActivity
-Creator_s_Assistant.MainActivity;md5f1213d9de745f02d9507fa172850ab3c.MainActivity
-creator_s_assistant.MainActivity;md5f1213d9de745f02d9507fa172850ab3c.MainActivity
