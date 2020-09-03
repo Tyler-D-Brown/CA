@@ -28,7 +28,8 @@ public class appRepository {
     public LiveData<List<magic>> magics;
     public LiveData<List<nation>> nations;
     public LiveData<List<race>> races;
-    public LiveData<List<world>> worlds;*/
+    public LiveData<List<world>> worlds;
+    */
 
     private appDatabase db;
     private Executor executor = Executors.newSingleThreadExecutor();
@@ -57,6 +58,16 @@ public class appRepository {
         });
     }
 
+    //TODO handle the deletion of characters to handle sudo array.
+    public void deleteCharacter(final character delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.character().deleteCharacter(delete);
+            }
+        });
+    }
+
     public LiveData<List<event>> getAllEvents(int world){return db.event().getAllEvents(world);}
 
     public event getEventById(int id){return db.event().getEventById(id);}
@@ -66,6 +77,15 @@ public class appRepository {
             @Override
             public void run() {
                 db.event().insertEvent(insert);
+            }
+        });
+    }
+
+    public void deleteEvent(final event delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.event().deleteEvent(delete);
             }
         });
     }
@@ -85,6 +105,16 @@ public class appRepository {
         );
     }
 
+    //TODO handle the deletion of factions to handle sudo array.
+    public void deleteFaction(final faction delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.faction().deleteFaction(delete);
+            }
+        });
+    }
+
     public LiveData<List<location>> getAllLocations(int world){return db.location().getAllLocation(world);}
 
     public location getLocationById(int id){return db.location().getLocationById(id);}
@@ -94,6 +124,15 @@ public class appRepository {
             @Override
             public void run() {
                 db.location().insertLocation(insert);
+            }
+        });
+    }
+
+    public void deleteLocation(final location delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.location().deleteLocation(delete);
             }
         });
     }
@@ -111,6 +150,15 @@ public class appRepository {
         });
     }
 
+    public void deleteMagic(final magic delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.magic().deleteMagic(delete);
+            }
+        });
+    }
+
     public LiveData<List<nation>> getAllNations(int world){return db.nation().getAllNations(world);}
 
     public nation getNationById(int id){return db.nation().getNationById(id);}
@@ -120,6 +168,15 @@ public class appRepository {
             @Override
             public void run() {
                 db.nation().insertNation(insert);
+            }
+        });
+    }
+
+    public void deleteNation(final nation delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.nation().deleteNation(delete);
             }
         });
     }
@@ -137,6 +194,15 @@ public class appRepository {
         });
     }
 
+    public void deleteRace(final race delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.race().deleteRace(delete);
+            }
+        });
+    }
+
     public LiveData<List<world>> getAllWorlds(){return db.world().getAllWorlds();}
 
     public world getWorldById(int id){return db.world().getWorldById(id);}
@@ -146,6 +212,19 @@ public class appRepository {
             @Override
             public void run() {
                 db.world().insertWorld(insert);
+            }
+        });
+    }
+
+    public world getNewWorld(){
+        return db.world().getNewWorld();
+    }
+
+    public void deleteWorld(final world delete){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                db.world().deleteWorld(delete);
             }
         });
     }

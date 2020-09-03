@@ -19,9 +19,12 @@ public interface worldDao {
     @Delete
     void deleteWorld(world delete);
 
-    @Query("SELECT * FROM race WHERE id=:id")
+    @Query("SELECT * FROM world WHERE id=:id")
     world getWorldById(int id);
 
-    @Query("SELECT * FROM race")
+    @Query("SELECT * FROM world")
     LiveData<List<world>> getAllWorlds();
+
+    @Query("SELECT * FROM world WHERE newWorld=1")
+    world getNewWorld();
 }
