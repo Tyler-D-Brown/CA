@@ -22,6 +22,6 @@ public interface factionDao {
     @Query("SELECT * FROM faction WHERE id=:id")
     faction getFactionById(int id);
 
-    @Query("SELECT * FROM faction")
-    LiveData<List<faction>> getAllFactions();
+    @Query("SELECT * FROM faction WHERE world=:world")
+    LiveData<List<faction>> getAllFactions(int world);
 }

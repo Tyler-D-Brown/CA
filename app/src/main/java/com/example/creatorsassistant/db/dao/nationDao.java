@@ -19,9 +19,9 @@ public interface nationDao {
     @Delete
     void deleteNation(nation delete);
 
-    @Query("SELECT * FROM world WHERE id=:id")
+    @Query("SELECT * FROM nation WHERE id=:id")
     nation getNationById(int id);
 
-    @Query("SELECT * FROM world")
-    LiveData<List<nation>> getAllNations();
+    @Query("SELECT * FROM nation WHERE world=:world")
+    LiveData<List<nation>> getAllNations(int world);
 }

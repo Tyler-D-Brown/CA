@@ -19,9 +19,9 @@ public interface raceDao {
     @Delete
     void deleteRace(race delete);
 
-    @Query("SELECT * FROM world WHERE id=:id")
+    @Query("SELECT * FROM race WHERE id=:id")
     race getRaceById(int id);
 
-    @Query("SELECT * FROM world")
-    LiveData<List<race>> getAllRace();
+    @Query("SELECT * FROM race WHERE world=:world")
+    LiveData<List<race>> getAllRace(int world);
 }

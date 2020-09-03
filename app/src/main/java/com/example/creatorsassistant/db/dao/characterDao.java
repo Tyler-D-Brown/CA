@@ -22,6 +22,6 @@ public interface characterDao {
     @Query("SELECT * FROM character WHERE id=:id")
     character getCharacterById(int id);
 
-    @Query("SELECT * FROM character")
-    LiveData<List<character>> getAllCharacters();
+    @Query("SELECT * FROM character WHERE world=:world")
+    LiveData<List<character>> getAllCharacters(int world);
 }

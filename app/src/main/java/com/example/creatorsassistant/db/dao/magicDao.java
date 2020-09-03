@@ -19,9 +19,9 @@ public interface magicDao {
     @Delete
     void deleteMagic(magic delete);
 
-    @Query("SELECT * FROM world WHERE id=:id")
+    @Query("SELECT * FROM magic WHERE id=:id")
     magic getMagicById(int id);
 
-    @Query("SELECT * FROM world")
-    LiveData<List<magic>> getAllMagic();
+    @Query("SELECT * FROM magic WHERE world=:world")
+    LiveData<List<magic>> getAllMagic(int world);
 }

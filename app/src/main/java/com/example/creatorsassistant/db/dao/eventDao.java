@@ -22,6 +22,6 @@ public interface eventDao {
     @Query("SELECT * FROM event WHERE id=:id")
     event getEventById(int id);
 
-    @Query("SELECT * FROM event")
-    LiveData<List<event>> getAllEvents();
+    @Query("SELECT * FROM event WHERE world=:world")
+    LiveData<List<event>> getAllEvents(int world);
 }
