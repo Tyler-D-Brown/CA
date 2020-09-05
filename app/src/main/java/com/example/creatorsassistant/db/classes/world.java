@@ -12,7 +12,16 @@ public class world {
     private String name;
     private String description;
     private String technologyLevel;
+
+    public void setNewWorld(boolean newWorld) {
+        this.newWorld = newWorld;
+    }
+
     private boolean newWorld;
+
+    public boolean isNewWorld() {
+        return newWorld;
+    }
 
     public world(int id, String name, String description, String technologyLevel) {
         this.id = id;

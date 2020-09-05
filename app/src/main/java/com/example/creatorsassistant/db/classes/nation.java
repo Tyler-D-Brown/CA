@@ -27,6 +27,7 @@ public class nation {
     private String enemies;
     @Ignore
     private int[] enemiesArray;
+    @Ignore
     private sqLiteSudoArray arrayHelper = new sqLiteSudoArray();
 
     public nation(int id, int ruler, int capital, int world, String name, String description, String government, String allies, String enemies) {
